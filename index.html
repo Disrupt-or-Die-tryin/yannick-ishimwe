@@ -334,7 +334,7 @@
       <div style="flex:1;min-width:280px;">
     <div class="hero-badge">Based in Mannheim–Heidelberg, Germany</div>
       <h1 class="hero-name">Yannick<br><span class="accent">Ishimwe.</span></h1>
-      <p class="hero-tagline"><strong>Builder. Connector. Community Architect.</strong></p>
+      <p class="hero-tagline"><strong><span id="typed-tagline"></span></strong></p>
       <p class="hero-sub">
         Building AI for physical retail, unlocking diaspora capital through community investing, and backing Africa’s next generation of founders — from the heart of Germany’s startup scene.
       </p>
@@ -361,6 +361,10 @@
         <div class="stat-item">
           <span class="stat-number">4+</span>
           <span class="stat-label">Years in Startup/VC Ecosystem</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Languages Spoken</span>
         </div>
       </div>
     </div>
@@ -657,5 +661,20 @@
   <div class="footer-copy">© 2026 · Kigali → Mannheim</div>
 </footer>
 
+
+<script>
+  const words = ["Builder.", "Connector.", "Community Architect."];
+  let result = "";
+  let i = 0;
+  function typeNext() {
+    if (i < words.length) {
+      result += (i > 0 ? " " : "") + words[i];
+      document.getElementById("typed-tagline").textContent = result;
+      i++;
+      setTimeout(typeNext, 600);
+    }
+  }
+  window.addEventListener("DOMContentLoaded", typeNext);
+</script>
 </body>
 </html>
